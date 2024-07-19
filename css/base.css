@@ -10,6 +10,8 @@
   --light-peach: #ffad9b;
   --dark-grey: #333136;
   --light-grey: #f1f3f5;
+
+  --nav-bar-height: 96px;
 }
 
 html {
@@ -22,6 +24,10 @@ html {
   line-height: 26px;
 
   color: var(--dark-grey);
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
@@ -56,7 +62,6 @@ button,
   padding: 1em 1.5em;
   border: none;
   border-radius: 10px;
-  text-decoration: none;
 
   font-family: "Jost", sans-serif;
   font-size: 15px;
@@ -87,17 +92,31 @@ button:hover {
 
 nav {
   margin: 0;
+  padding: 2em 1.5em;
+  /* padding-right: 20em; */
   width: 100%;
-  height: 96px;
+  height: var(--nav-bar-height);
+  box-sizing: border-box;
 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  font-size: 24px;
+  /* font-size: 24px;
   letter-spacing: 2px;
-  text-transform: uppercase;
+  text-transform: uppercase; */
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 202px;
+  height: 27px;
 }
 
 .nav-toggle {
@@ -107,8 +126,12 @@ nav {
 .nav-list-mobile {
   position: fixed;
   left: -100%;
-  top: 0;
+  top: var(--nav-bar-height);
   width: 100%;
+  /* max-width: 500px; */
+  padding-top: 3em;
+  padding-bottom: 3em;
+  box-sizing: border-box;
 
   list-style: none;
 
@@ -117,11 +140,23 @@ nav {
   display: flex;
   flex-direction: column;
 
-  transition: right 0.4s;
+  transition: left 0.4s;
 }
 
 .nav-list-visible {
   left: 0 !important;
+}
+
+.nav-link {
+  font-size: 24px;
+  line-height: 25px;
+  letter-spacing: 2px;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  color: var(--white);
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 500px) {

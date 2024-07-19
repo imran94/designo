@@ -15,24 +15,45 @@
     <link rel="stylesheet" href="css/index.css" />
 
     <title>Frontend Mentor | Designo Agency Website Challenge</title>
-  </head>
-  <body>
-    <nav>
-      <a href="#"><img src="assets/shared/desktop/logo-dark.png" /></a>
 
-      <img src="assets/shared/mobile/icon-hamburger.svg" class="nav-toggle" />
+    <script type="module">
+      import { createApp } from "https://unpkg.com/petite-vue?module";
+
+      function Content() {
+        return {
+          isNavListEnabled: false,
+          navToggleBtnSource: "assets/shared/mobile/icon-hamburger.svg",
+          mounted() {
+            console.log(this.navToggleBtnSource);
+          },
+          toggleNavbar() {
+            this.isNavListEnabled = !this.isNavListEnabled;
+            this.navToggleBtnSource = `assets/shared/mobile/icon-${
+              this.isNavListEnabled ? "close" : "hamburger"
+            }.svg`;
+            console.log(this.navToggleBtnSource);
+          },
+        };
+      }
+      createApp({ Content }).mount();
+    </script>
+  </head>
+  <body v-scope="Content()" @vue:mounted="mounted">
+    <nav>
+      <a href="#" class="logo-link"
+        ><img class="logo" src="assets/shared/desktop/logo-dark.png"
+      /></a>
+
+      <img class="nav-toggle" :src="navToggleBtnSource" @click="toggleNavbar" />
     </nav>
-    <ul class="nav-list-mobile">
-      <li class="nav-item">
-        <a href="#" class="nav-link">our company</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">locations</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">contact</a>
-      </li>
-    </ul>
+    <div
+      class="nav-list-mobile"
+      :class="{ 'nav-list-visible': isNavListEnabled }"
+    >
+      <a href="#" class="nav-link">our company</a>
+      <a href="#" class="nav-link">locations</a>
+      <a href="#" class="nav-link">contact</a>
+    </div>
 
     <div class="first">
       <h1>Award-winning custom designs and digital branding solutions</h1>

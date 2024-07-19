@@ -23,8 +23,6 @@ main {
   background-color: var(--peach);
   background-image: url(../assets/home/desktop/bg-pattern-hero-home.svg);
   background-repeat: no-repeat;
-  /* background-attachment: local;
-  background-clip: border-box; */
   background-origin: content-box;
   background-position: center left;
 
