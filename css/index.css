@@ -1,0 +1,51 @@
+main {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+.first {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+
+  display: grid;
+  grid-template-columns: 100%;
+  /* align-items: center; */
+  justify-items: center;
+  max-height: 843px;
+  overflow: hidden;
+  /* background: fixed border-box var(--peach)
+     content-box center
+    no-repeat cover; */
+
+  background-color: var(--peach);
+  background-image: url(../assets/home/desktop/bg-pattern-hero-home.svg);
+  background-repeat: no-repeat;
+  /* background-attachment: local;
+  background-clip: border-box; */
+  background-origin: content-box;
+  background-position: center left;
+
+  padding-top: 4em;
+  padding-bottom: 0;
+
+  color: var(--white);
+
+  text-align: center;
+  color: var(--white);
+}
+
+.first .btn {
+  margin-top: 2em;
+}
+
+.first .phone {
+  /* padding-top: 5em; */
+  height: 570px;
+  /* height: min-content; */
+  /* overflow: none; */
+  object-fit: none;
+  object-position: 50% 25%;
+}
