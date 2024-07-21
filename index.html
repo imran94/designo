@@ -44,48 +44,162 @@
         ><img class="logo" src="assets/shared/desktop/logo-dark.png"
       /></a>
 
+      <div class="nav-links">
+        <a href="#" class="nav-link">our company</a>
+        <a href="#" class="nav-link">locations</a>
+        <a href="#" class="nav-link">contact</a>
+      </div>
       <img class="nav-toggle" :src="navToggleBtnSource" @click="toggleNavbar" />
     </nav>
     <div
       class="nav-list-mobile"
       :class="{ 'nav-list-visible': isNavListEnabled }"
     >
-      <a href="#" class="nav-link">our company</a>
-      <a href="#" class="nav-link">locations</a>
-      <a href="#" class="nav-link">contact</a>
+      <a href="#" class="nav-link-mobile">our company</a>
+      <a href="#" class="nav-link-mobile">locations</a>
+      <a href="#" class="nav-link-mobile">contact</a>
     </div>
 
-    <div class="first">
-      <h1>Award-winning custom designs and digital branding solutions</h1>
+    <main>
+      <div class="first">
+        <h1 class="heading">
+          Award-winning custom designs and digital branding solutions
+        </h1>
 
-      <div>
-        With over 10 years in the industry, we are experienced in creating fully
-        responsive websites, apps, and engaging brand experiences. Find out more
-        about our services.
+        <div class="paragraph">
+          With over 10 years in the industry, we are experienced in creating
+          fully responsive websites, apps, and engaging brand experiences. Find
+          out more about our services.
+        </div>
+
+        <a href="#" class="btn btn-light">Learn More</a>
+
+        <img src="assets/home/desktop/image-hero-phone.png" class="phone" />
       </div>
 
-      <a href="#" class="btn btn-light">Learn More</a>
+      <div class="design-types">
+        <div class="design-type web-design" href="#">
+          <a class="design-type-overlay" href="#">
+            <h2 class="design-title">Web Design</h2>
+            <div class="view-projects">
+              View Projects
+              <img src="assets/shared/desktop/icon-right-arrow.svg" />
+            </div>
+          </a>
+        </div>
+        <div class="design-type app-design" href="#">
+          <a class="design-type-overlay" href="#">
+            <h2 class="design-title">App Design</h2>
+            <div class="view-projects">
+              View Projects
+              <img src="assets/shared/desktop/icon-right-arrow.svg" />
+            </div>
+          </a>
+        </div>
+        <div class="design-type graphic-design" href="#">
+          <a class="design-type-overlay" href="#">
+            <h2 class="design-title">Graphic Design</h2>
+            <div class="view-projects">
+              View Projects
+              <img src="assets/shared/desktop/icon-right-arrow.svg" />
+            </div>
+          </a>
+        </div>
+      </div>
 
-      <img src="assets/home/desktop/image-hero-phone.png" class="phone" />
-    </div>
+      <div class="skills">
+        <div class="skill">
+          <img
+            src="assets/home/desktop/illustration-passionate.svg"
+            class="skill-image"
+          />
+          <h3 class="skill-name">Passionate</h3>
+          <div class="skill-desc">
+            Each project starts with an in-depth brand research to ensure we
+            only create products that serve a purpose. We merge art, design, and
+            technology into exciting new solutions.
+          </div>
+        </div>
+        <div class="skill">
+          <img
+            src="assets/home/desktop/illustration-resourceful.svg"
+            class="skill-image"
+          />
+          <h3 class="skill-name">Resourceful</h3>
+          <div class="skill-desc">
+            Everything that we do has a strategic purpose. We use an agile
+            approach in all of our projects and value customer collaboration. It
+            guarantees superior results that fulfill our clients' needs.
+          </div>
+        </div>
+        <div class="skill">
+          <img
+            src="assets/home/desktop/illustration-friendly.svg"
+            class="skill-image"
+          />
+          <h3 class="skill-name">Friendly</h3>
+          <div class="skill-desc">
+            We are a group of enthusiastic folks who know how to put people
+            first. Our success depends on our customers, and we strive to give
+            them the best experience a company can provide.
+          </div>
+        </div>
+      </div>
+    </main>
 
-    <!-- Our Company Locations Contact Award-winning custom designs and digital
-    branding solutions With over 10 years in the industry, we are experienced in
-    creating fully responsive websites, app design, and engaging brand
-    experiences. Find out more about our services. Learn more Web Design View
-    Projects App Design View Projects Graphic Design View Projects Passionate
-    Each project starts with an in-depth brand research to ensure we only create
-    products that serve a purpose. We merge art, design, and technology into
-    exciting new solutions. Resourceful Everything that we do has a strategic
-    purpose. We use an agile approach in all of our projects and value customer
-    collaboration. It guarantees superior results that fulfill our clients’
-    needs. Friendly We are a group of enthusiastic folks who know how to put
-    people first. Our success depends on our customers, and we strive to give
-    them the best experience a company can provide. Let’s talk about your
-    project Ready to take it to the next level? Contact us today and find out
-    how our expertise can help your business grow. Get in touch Our company
-    Locations Contact Designo Central Office 3886 Wellington Street Toronto,
-    Ontario M9C 3J5 Contact Us (Central Office) P : +1 253-863-8967 M :
-    contact@designo.co -->
+    <footer>
+      <div class="project-contact-section">
+        <h1 class="heading">Let's talk about your project</h1>
+        <div class="paragraph">
+          Ready to take it to the next level? Contact us today and find out how
+          our expertise can help your business grow.
+        </div>
+        <a href="#" class="btn btn-light">get in touch</a>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-nav">
+          <a href="#" class="logo-link"
+            ><img class="logo" src="assets/shared/desktop/logo-light.png"
+          /></a>
+          <hr class="footer-divider footer-divider-1" />
+          <div class="nav-links">
+            <a href="#" class="nav-link dark">our company</a>
+            <a href="#" class="nav-link dark">locations</a>
+            <a href="#" class="nav-link dark">contact</a>
+          </div>
+        </div>
+
+        <hr class="footer-divider footer-divider-2" />
+
+        <div class="contact-info-group">
+          <div class="address">
+            <div><strong>Designo Central Office</strong></div>
+            <div>3886 Wellington Street</div>
+            <div>Toronto, Ontario M9C 3J5</div>
+          </div>
+
+          <div class="contact-us">
+            <div><strong>Contact Us (Central Office)</strong></div>
+            <div>P : +1 253-863-8967</div>
+            <div>M : contact@designo.co</div>
+          </div>
+
+          <div class="social-media">
+            <a href="#"
+              ><img src="assets/shared/desktop/icon-facebook.svg"
+            /></a>
+            <a href="#"><img src="assets/shared/desktop/icon-youtube.svg" /></a>
+            <a href="#"><img src="assets/shared/desktop/icon-twitter.svg" /></a>
+            <a href="#"
+              ><img src="assets/shared/desktop/icon-pinterest.svg"
+            /></a>
+            <a href="#"
+              ><img src="assets/shared/desktop/icon-instagram.svg"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

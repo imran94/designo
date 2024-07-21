@@ -3,22 +3,15 @@ main {
 
   display: grid;
   grid-template-columns: 100%;
+  gap: 10em;
 }
 
 .first {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
-
   display: grid;
   grid-template-columns: 100%;
-  /* align-items: center; */
   justify-items: center;
   max-height: 843px;
   overflow: hidden;
-  /* background: fixed border-box var(--peach)
-     content-box center
-    no-repeat cover; */
 
   background-color: var(--peach);
   background-image: url(../assets/home/desktop/bg-pattern-hero-home.svg);
@@ -40,10 +33,207 @@ main {
 }
 
 .first .phone {
-  /* padding-top: 5em; */
   height: 570px;
-  /* height: min-content; */
-  /* overflow: none; */
   object-fit: none;
   object-position: 50% 25%;
+}
+
+.design-types {
+  display: grid;
+  gap: 1em;
+  margin: 0 var(--body-padding-horizontal);
+}
+
+.design-type {
+  color: var(--white);
+
+  border-radius: var(--rounded-corner-radius);
+  text-transform: uppercase;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.design-type-overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  color: inherit;
+
+  border-radius: inherit;
+  background-color: var(--design-image-overlay-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.web-design {
+  background: center / cover no-repeat var(--web-design-bg);
+}
+
+.app-design {
+  background: center / cover no-repeat var(--app-design-bg);
+}
+
+.graphic-design {
+  background: center / cover no-repeat var(--graphic-design-bg);
+}
+
+.web-design .design-type-overlay:hover,
+.web-design .design-type-overlay:active {
+  background: var(--design-image-overlay-hover),
+    center / cover no-repeat var(--web-design-bg);
+}
+.app-design .design-type-overlay:hover,
+.app-design .design-type-overlay:active {
+  background: var(--design-image-overlay-hover),
+    center / cover no-repeat var(--app-design-bg);
+}
+.graphic-design .design-type-overlay:hover,
+.graphic-design .design-type-overlay:active {
+  background: var(--design-image-overlay-hover),
+    center / cover no-repeat var(--graphic-design-bg);
+}
+
+.design-title {
+  letter-spacing: 1.4px;
+}
+.view-projects {
+  letter-spacing: 5px;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4em;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.skill {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  row-gap: 2em;
+}
+
+.skill-image {
+  background: url("../assets/shared/desktop/bg-pattern-small-circle.svg");
+}
+
+.skill-name {
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 500px) {
+  .first {
+    margin: 0 var(--body-padding-horizontal);
+    border-radius: var(--rounded-corner-radius);
+    padding: 2em 5em 0em 5em;
+    background-position: top 45% left -100%;
+  }
+
+  .first .paragraph {
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+
+  .skills {
+    text-align: left;
+    margin: 0 var(--body-padding-horizontal);
+  }
+
+  .skill {
+    grid-template-areas:
+      "image name"
+      "image desc";
+    row-gap: 0;
+    column-gap: 2em;
+    justify-items: left;
+  }
+
+  .skill-image {
+    grid-area: image;
+  }
+
+  .skill-name {
+    grid-area: name;
+    align-self: self-end;
+  }
+
+  .skill-desc {
+    grid-area: desc;
+    align-self: self-start;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .first {
+    padding: 3em 5em 0 7em;
+    grid-template: 225px 80px auto / 60% auto;
+    justify-content: space-between;
+    align-content: center;
+    gap: 2em;
+    align-items: start;
+    justify-items: start;
+    text-align: left;
+    background-position: top -45px right -100px;
+  }
+
+  .first .heading {
+    margin-top: 1.75em;
+  }
+  .first .paragraph,
+  .first .btn {
+    margin: 0;
+  }
+  .first .paragraph {
+    padding-left: 0;
+    padding-right: 10em;
+  }
+
+  .first .phone {
+    grid-column: 2;
+    grid-row: 1 / -1;
+  }
+
+  .design-types {
+    height: 640px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2em;
+    /* grid-template:
+      "web app"
+      "web graphic"; */
+  }
+
+  .web-design {
+    grid-row: 1 / -1;
+    grid-column: 1;
+  }
+
+  .skills,
+  .skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2em;
+  }
+
+  .skills {
+    flex-direction: row;
+  }
+
+  .skill {
+    flex-direction: column;
+  }
+
+  .skill-name,
+  .skill-desc {
+    width: 100%;
+  }
 }
