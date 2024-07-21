@@ -1,60 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Designo Agency Website Challenge</title>
-</head>
-<body>
-  Our Company
-  Locations
-  Contact
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
 
-  Web design
-  We build websites that serve as powerful marketing tools and bring memorable brand experiences.
-  
-  Express
-  A multi-carrier shipping website for ecommerce businesses
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/design.css" />
 
-  Transfer
-  Site for low-cost money transfers and sending money within seconds
+    <title>Frontend Mentor | Designo Agency Website Challenge</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="logo-link"
+        ><img class="logo" src="assets/shared/desktop/logo-dark.png"
+      /></a>
 
-  Photon
-  A state-of-the-art music player with high-resolution audio and DSP effects
+      <div class="nav-links">
+        <a href="#" class="nav-link">our company</a>
+        <a href="#" class="nav-link">locations</a>
+        <a href="#" class="nav-link">contact</a>
+      </div>
+      <img
+        id="nav-toggle"
+        src="assets/shared/mobile/icon-hamburger.svg"
+        onclick="toggleNavBar()"
+      />
+    </nav>
+    <div id="nav-list-mobile" :class="{ 'nav-list-visible': isNavListEnabled }">
+      <a href="#" class="nav-link-mobile">our company</a>
+      <a href="#" class="nav-link-mobile">locations</a>
+      <a href="#" class="nav-link-mobile">contact</a>
+    </div>
 
-  Builder
-  Connects users with local contractors based on their location
+    <main>
+      <div class="banner">
+        <h1 class="heading">Web design</h1>
+        <div class="paragraph">
+          We build websites that serve as powerful marketing tools and bring
+          memorable brand experiences.
+        </div>
+      </div>
 
-  Blogr
-  Blogr is a platform for creating an online blog or publication
+      <div class="past-projects">
+        <div class="project">
+          <img
+            class="project-preview"
+            src="assets/web-design/desktop/image-express.jpg"
+          />
+          <h3 class="project-name">EXPRESS</h3>
+          <div class="project-desc">
+            A multi-carrier shipping website for ecommerce businesses
+          </div>
+        </div>
 
-  Camp
-  Get expert training in coding, data, design, and digital marketing
+        <div class="project">
+          <img
+            class="project-preview"
+            src="assets/web-design/desktop/image-transfer.jpg"
+          />
+          <h3 class="project-name">TRANSFER</h3>
+          <div class="project-desc">
+            Site for low-cost money transfers and sending money within seconds
+          </div>
+        </div>
 
-  App Design
-  View Projects
-  
-  Graphic Design
-  View Projects
-  
-  Let’s talk about your project
-  Ready to take it to the next level? Contact us today and find out how our expertise can help 
-  your business grow.
-  Get in touch
-  
-  Our company
-  Locations
-  Contact
-  
-  Designo Central Office
-  3886 Wellington Street
-  Toronto, Ontario M9C 3J5
-  
-  Contact Us (Central Office)
-  P : +1 253-863-8967
-  M : contact@designo.co
-</body>
+        <div class="project">
+          <img
+            class="project-preview"
+            src="assets/web-design/desktop/image-photon.jpg"
+          />
+          <h3 class="project-name">PHOTON</h3>
+          <div class="project-desc">
+            A state-of-the-art music player with high-resolution audio and DSP
+            effects
+          </div>
+        </div>
+
+        <div class="project">
+          <img
+            class="project-preview"
+            src="assets/web-design/desktop/image-builder.jpg"
+          />
+          <h3 class="project-name">BUILDER</h3>
+          <div class="project-desc">
+            Connects users with local contractors based on their location
+          </div>
+        </div>
+
+        <div class="project">
+          <img
+            class="project-preview"
+            src="assets/web-design/desktop/image-blogr.jpg"
+          />
+          <h3 class="project-name">BLOGR</h3>
+          <div class="project-desc">
+            A platform for creating an online blog or publication
+          </div>
+        </div>
+
+        <div class="project">
+          <img
+            class="project-preview"
+            src="assets/web-design/desktop/image-camp.jpg"
+          />
+          <h3 class="project-name">CAMP</h3>
+          <div class="project-desc">
+            Get expert training in coding, data, design and digital marketing
+          </div>
+        </div>
+      </div>
+
+      <div class="design-types">
+        <div class="design-type app-design">
+          <a class="design-type-overlay" href="app-design.html">
+            <h2 class="design-title">App Design</h2>
+            <div class="view-projects">
+              View Projects
+              <img src="assets/shared/desktop/icon-right-arrow.svg" />
+            </div>
+          </a>
+        </div>
+        <div class="design-type graphic-design">
+          <a class="design-type-overlay" href="graphic-design.html">
+            <h2 class="design-title">Graphic Design</h2>
+            <div class="view-projects">
+              View Projects
+              <img src="assets/shared/desktop/icon-right-arrow.svg" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="project-contact-section">
+        <h1 class="heading">Let's talk about your project</h1>
+        <div class="paragraph">
+          Ready to take it to the next level? Contact us today and find out how
+          our expertise can help your business grow.
+        </div>
+        <a href="#" class="btn btn-light">get in touch</a>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-nav">
+          <a href="index.html" class="logo-link"
+            ><img class="logo" src="assets/shared/desktop/logo-light.png"
+          /></a>
+          <hr class="footer-divider footer-divider-1" />
+          <div class="nav-links">
+            <a href="#" class="nav-link dark">our company</a>
+            <a href="#" class="nav-link dark">locations</a>
+            <a href="#" class="nav-link dark">contact</a>
+          </div>
+        </div>
+
+        <hr class="footer-divider footer-divider-2" />
+
+        <div class="contact-info-group">
+          <div class="address">
+            <div><strong>Designo Central Office</strong></div>
+            <div>3886 Wellington Street</div>
+            <div>Toronto, Ontario M9C 3J5</div>
+          </div>
+
+          <div class="contact-us">
+            <div><strong>Contact Us (Central Office)</strong></div>
+            <div>P : +1 253-863-8967</div>
+            <div>M : contact@designo.co</div>
+          </div>
+
+          <div class="social-media">
+            <a href="#">
+              <img src="assets/shared/desktop/icon-facebook.svg" />
+            </a>
+            <a href="#">
+              <img src="assets/shared/desktop/icon-youtube.svg" />
+            </a>
+            <a href="#">
+              <img src="assets/shared/desktop/icon-twitter.svg" />
+            </a>
+            <a href="#">
+              <img src="assets/shared/desktop/icon-pinterest.svg" />
+            </a>
+            <a href="#">
+              <img src="assets/shared/desktop/icon-instagram.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
+<script src="js/nav.js"></script>

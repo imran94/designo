@@ -15,30 +15,8 @@
     <link rel="stylesheet" href="css/index.css" />
 
     <title>Frontend Mentor | Designo Agency Website Challenge</title>
-
-    <script type="module">
-      import { createApp } from "https://unpkg.com/petite-vue?module";
-
-      function Content() {
-        return {
-          isNavListEnabled: false,
-          navToggleBtnSource: "assets/shared/mobile/icon-hamburger.svg",
-          mounted() {
-            console.log(this.navToggleBtnSource);
-          },
-          toggleNavbar() {
-            this.isNavListEnabled = !this.isNavListEnabled;
-            this.navToggleBtnSource = `assets/shared/mobile/icon-${
-              this.isNavListEnabled ? "close" : "hamburger"
-            }.svg`;
-            console.log(this.navToggleBtnSource);
-          },
-        };
-      }
-      createApp({ Content }).mount();
-    </script>
   </head>
-  <body v-scope="Content()" @vue:mounted="mounted">
+  <body>
     <nav>
       <a href="#" class="logo-link"
         ><img class="logo" src="assets/shared/desktop/logo-dark.png"
@@ -49,19 +27,20 @@
         <a href="#" class="nav-link">locations</a>
         <a href="#" class="nav-link">contact</a>
       </div>
-      <img class="nav-toggle" :src="navToggleBtnSource" @click="toggleNavbar" />
+      <img
+        id="nav-toggle"
+        src="assets/shared/mobile/icon-hamburger.svg"
+        onclick="toggleNavBar()"
+      />
     </nav>
-    <div
-      class="nav-list-mobile"
-      :class="{ 'nav-list-visible': isNavListEnabled }"
-    >
+    <div id="nav-list-mobile" :class="{ 'nav-list-visible': isNavListEnabled }">
       <a href="#" class="nav-link-mobile">our company</a>
       <a href="#" class="nav-link-mobile">locations</a>
       <a href="#" class="nav-link-mobile">contact</a>
     </div>
 
     <main>
-      <div class="first">
+      <div class="banner">
         <h1 class="heading">
           Award-winning custom designs and digital branding solutions
         </h1>
@@ -159,7 +138,7 @@
 
       <div class="footer-content">
         <div class="footer-nav">
-          <a href="#" class="logo-link"
+          <a href="index.html" class="logo-link"
             ><img class="logo" src="assets/shared/desktop/logo-light.png"
           /></a>
           <hr class="footer-divider footer-divider-1" />
@@ -207,3 +186,4 @@
     </footer>
   </body>
 </html>
+<script src="js/nav.js"></script>

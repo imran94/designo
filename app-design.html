@@ -1,57 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Designo Agency Website Challenge</title>
-</head>
-<body>
-  Our Company
-  Locations
-  Contact
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
 
-  App design
-  Our mobile designs bring intuitive digital solutions to your customers right at their fingertips.
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/design.css" />
 
-  Airfilter
-  Solving the problem of poor indoor air quality by filtering the air
+    <title>Frontend Mentor | Designo Agency Website Challenge</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="logo-link"
+        ><img class="logo" src="assets/shared/desktop/logo-dark.png"
+      /></a>
 
-  Eyecam
-  Product that lets you edit your favorite photos and videos at any time
+      <div class="nav-links">
+        <a href="#" class="nav-link">our company</a>
+        <a href="#" class="nav-link">locations</a>
+        <a href="#" class="nav-link">contact</a>
+      </div>
+      <img
+        id="nav-toggle"
+        src="assets/shared/mobile/icon-hamburger.svg"
+        onclick="toggleNavBar()"
+      />
+    </nav>
+    <div id="nav-list-mobile" :class="{ 'nav-list-visible': isNavListEnabled }">
+      <a href="#" class="nav-link-mobile">our company</a>
+      <a href="#" class="nav-link-mobile">locations</a>
+      <a href="#" class="nav-link-mobile">contact</a>
+    </div>
 
-  Faceit
-  Get to meet your favorite internet superstar with the faceit app
+    <main>
+      <div class="banner">
+        <h1 class="heading">App Design</h1>
+        <div class="paragraph">
+          Our mobile designs bring intuitive digital solutions to your customers
+          right at their fingertips.
+        </div>
+      </div>
 
-  Todo
-  A todo app that features cloud sync with light and dark mode
+      <div class="past-projects">
+        <div class="project">
+          <img
+            class="project-preview"
+            src="assets/app-design/desktop/image-airfilter.jpg"
+          />
+          <h3 class="project-name">AIRFILTER</h3>
+          <div class="project-desc">
+            Solving the problem of poor indoor air quality by filtering the air
+          </div>
+        </div>
 
-  Loopstudios
-  A VR experience app made for Loopstudios
+        <div class="project">
+          <img
+            class="project-preview"
+            src="assets/app-design/desktop/image-eyecam.jpg"
+          />
+          <h3 class="project-name">Eyecam</h3>
+          <div class="project-desc">
+            Product that lets you edit your favorite photos and videos at any
+            time
+          </div>
+        </div>
 
-  Web Design
-  View Projects
+        <div class="project">
+          <img
+            class="project-preview"
+            src="assets/app-design/desktop/image-faceit.jpg"
+          />
+          <h3 class="project-name">Faceit</h3>
+          <div class="project-desc">
+            Get to meet your favorite internet superstar with the faceit app
+          </div>
+        </div>
 
-  Graphic Design
-  View Projects
+        <div class="project">
+          <img
+            class="project-preview"
+            src="assets/app-design/desktop/image-todo.jpg"
+          />
+          <h3 class="project-name">Todo</h3>
+          <div class="project-desc">
+            A todo app that features cloud sync with light and dark mode
+          </div>
+        </div>
 
-  Let’s talk about your project
-  Ready to take it to the next level? Contact us today and find out how our expertise can help
-  your business grow.
-  Get in touch
+        <div class="project">
+          <img
+            class="project-preview"
+            src="assets/app-design/desktop/image-loopstudios.jpg"
+          />
+          <h3 class="project-name">Loopstudios</h3>
+          <div class="project-desc">
+            A VR experience app made for Loopstudios
+          </div>
+        </div>
+      </div>
 
-  Our company
-  Locations
-  Contact
+      <div class="design-types">
+        <div class="design-type web-design">
+          <a class="design-type-overlay" href="web-design.html">
+            <h2 class="design-title">Web Design</h2>
+            <div class="view-projects">
+              View Projects
+              <img src="assets/shared/desktop/icon-right-arrow.svg" />
+            </div>
+          </a>
+        </div>
+        <div class="design-type graphic-design">
+          <a class="design-type-overlay" href="graphic-design.html">
+            <h2 class="design-title">Graphic Design</h2>
+            <div class="view-projects">
+              View Projects
+              <img src="assets/shared/desktop/icon-right-arrow.svg" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
 
-  Designo Central Office
-  3886 Wellington Street
-  Toronto, Ontario M9C 3J5
+    <footer>
+      <div class="project-contact-section">
+        <h1 class="heading">Let's talk about your project</h1>
+        <div class="paragraph">
+          Ready to take it to the next level? Contact us today and find out how
+          our expertise can help your business grow.
+        </div>
+        <a href="#" class="btn btn-light">get in touch</a>
+      </div>
 
-  Contact Us (Central Office)
-  P : +1 253-863-8967
-  M : contact@designo.co
-</body>
+      <div class="footer-content">
+        <div class="footer-nav">
+          <a href="index.html" class="logo-link"
+            ><img class="logo" src="assets/shared/desktop/logo-light.png"
+          /></a>
+          <hr class="footer-divider footer-divider-1" />
+          <div class="nav-links">
+            <a href="#" class="nav-link dark">our company</a>
+            <a href="#" class="nav-link dark">locations</a>
+            <a href="#" class="nav-link dark">contact</a>
+          </div>
+        </div>
+
+        <hr class="footer-divider footer-divider-2" />
+
+        <div class="contact-info-group">
+          <div class="address">
+            <div><strong>Designo Central Office</strong></div>
+            <div>3886 Wellington Street</div>
+            <div>Toronto, Ontario M9C 3J5</div>
+          </div>
+
+          <div class="contact-us">
+            <div><strong>Contact Us (Central Office)</strong></div>
+            <div>P : +1 253-863-8967</div>
+            <div>M : contact@designo.co</div>
+          </div>
+
+          <div class="social-media">
+            <a href="#">
+              <img src="assets/shared/desktop/icon-facebook.svg" />
+            </a>
+            <a href="#">
+              <img src="assets/shared/desktop/icon-youtube.svg" />
+            </a>
+            <a href="#">
+              <img src="assets/shared/desktop/icon-twitter.svg" />
+            </a>
+            <a href="#">
+              <img src="assets/shared/desktop/icon-pinterest.svg" />
+            </a>
+            <a href="#">
+              <img src="assets/shared/desktop/icon-instagram.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
+<script src="js/nav.js"></script>
