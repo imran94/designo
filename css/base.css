@@ -27,12 +27,14 @@
     rgba(231, 129, 107, 0.7)
   );
 
+  --design-card-height: 250px;
+
   --web-design-bg: url(../assets/home/mobile/image-web-design.jpg);
   --app-design-bg: url(../assets/home/mobile/image-app-design.jpg);
   --graphic-design-bg: url(../assets/home/mobile/image-graphic-design.jpg);
 
   --nav-padding-vertical: 5em;
-  --body-padding-horizontal: 2em;
+  --body-padding-horizontal: 1em;
 }
 
 @media screen and (min-width: 500px) {
@@ -42,6 +44,7 @@
     --graphic-design-bg: url(../assets/home/tablet/image-graphic-design.jpg);
 
     --body-padding-horizontal: 3em;
+    --design-card-height: 200px;
   }
 }
 
@@ -52,6 +55,7 @@
     --graphic-design-bg: url(../assets/home/desktop/image-graphic-design.jpg);
 
     --body-padding-horizontal: 10em;
+    --design-card-height: 100%;
   }
 }
 
@@ -168,8 +172,9 @@ nav {
 .nav-list-mobile {
   position: fixed;
   left: -100%;
-  top: var(--nav-bar-height);
+  top: calc(var(--nav-bar-height) + var(--nav-padding-vertical) / 2);
   width: 100%;
+  z-index: 4;
   padding-top: 3em;
   padding-bottom: 3em;
   box-sizing: border-box;
@@ -309,6 +314,11 @@ nav .nav-links .nav-link {
   align-items: center;
   justify-content: center;
   column-gap: 1em;
+}
+
+.social-media a img:hover,
+.social-media a img:active {
+  filter: sepia(65%);
 }
 
 @media screen and (min-width: 500px) {
