@@ -63,7 +63,6 @@
 
   .banner,
   .banner-secondary {
-    justify-items: end;
     align-items: center;
 
     text-align: left;
@@ -72,6 +71,7 @@
     padding: 0 0 0 6em;
     grid-template: 40% 1fr / 1fr 1fr;
     row-gap: 2em;
+    justify-items: end;
   }
   .banner-heading,
   .banner-paragraph {
@@ -86,15 +86,6 @@
   .about-image {
     grid-column: 2;
   }
-  /* .banner .heading {
-    margin: 0;
-    padding: 0 100px 0 50px;
-  }
-  .banner .paragraph {
-    margin: 0;
-    padding: 0 100px 0 50px;
-  } */
-
   .banner-heading {
     align-self: self-end;
     justify-self: self-start;
@@ -104,17 +95,42 @@
   }
 
   .banner-secondary {
-    grid-template: 1fr 1fr 1fr / 40% 1fr;
+    gap: 0;
+    row-gap: 0;
+  }
+  .banner-secondary-talent,
+  .banner-secondary-real-deal {
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .banner-secondary-talent {
+    grid-template-columns: 40% 1fr;
+    justify-items: start;
+    padding: 0 6em 0 0;
+  }
+  .banner-secondary-real-deal {
+    grid-template-columns: 1fr 40%;
+    justify-items: end;
+    padding: 0 0 0 6em;
   }
   .banner-secondary-talent .banner-heading,
   .banner-secondary-talent .banner-paragraph {
-    padding: 0 50px 0 100px;
+    padding: 0 100px;
     margin: 0;
   }
   .talent-image {
     border-radius: var(--rounded-corner-radius) 0 0 var(--rounded-corner-radius);
     grid-column: 1;
     grid-row: 1 / -1;
+  }
+  .real-deal-image {
+    border-radius: 0 var(--rounded-corner-radius) var(--rounded-corner-radius) 0;
+    grid-column: 2;
+    grid-row: 1 / -1;
+  }
+
+  .banner-secondary-real-deal .heading,
+  .banner-secondary-real-deal .paragraph {
+    padding-right: 100px;
   }
   .p-1 {
     align-self: center;

@@ -534,6 +534,15 @@ nav .nav-links .nav-link {
 }
 
 @media screen and (min-width: 1024px) {
+  .locations {
+    gap: 1em;
+    justify-content: space-around;
+    /* width: min-content; */
+  }
+  .location {
+    width: fit-content;
+  }
+
   .project-contact-section {
     grid-template-columns: minmax(100px, 30%) 1fr;
     grid-template-rows: auto auto;
