@@ -1,8 +1,14 @@
 .banner {
+  height: 320px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.banner .heading {
+  text-transform: capitalize;
 }
 
 .past-projects {

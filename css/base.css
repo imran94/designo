@@ -55,7 +55,7 @@
     --app-design-bg: url(../assets/home/desktop/image-app-design.jpg);
     --graphic-design-bg: url(../assets/home/desktop/image-graphic-design.jpg);
 
-    --body-padding-horizontal: 10em;
+    --body-padding-horizontal: 12em;
     --design-card-height: 100%;
 
     --nav-padding-vertical: 5em;
@@ -231,14 +231,18 @@ main {
   gap: 8em;
 }
 
-.banner {
+.banner,
+.banner-secondary {
   display: grid;
   grid-template-columns: 100%;
   align-items: center;
   justify-items: center;
-  max-height: 250px;
+
+  text-align: center;
+}
+
+.banner {
   overflow: hidden;
-  padding: 2em 6em;
 
   background-color: var(--peach);
   background-image: url(../assets/shared/desktop/bg-pattern-small-circle.svg);
@@ -247,19 +251,14 @@ main {
   background-size: cover;
 
   color: var(--white);
-
-  text-align: center;
-  color: var(--white);
 }
 
-.banner .btn {
-  margin-top: 2em;
+.banner-secondary {
+  background-color: var(--lightest-peach);
+  color: var(--black);
 }
-
-.banner .phone {
-  height: 570px;
-  object-fit: none;
-  object-position: 50% 25%;
+.banner-secondary .banner-heading {
+  color: var(--peach);
 }
 
 .design-types {
@@ -331,6 +330,46 @@ main {
 }
 .view-projects {
   letter-spacing: 5px;
+}
+
+.locations,
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.locations {
+  flex-flow: row wrap;
+  margin: 0 var(--body-padding-horizontal);
+  gap: 5em;
+}
+
+.location {
+  flex-direction: column;
+  width: 100%;
+  gap: 1em;
+}
+.location-image-group {
+  display: grid;
+  grid-template: 202px / 202px;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.location-image-bg,
+.location-icon {
+  grid-area: 1/1/1/1;
+}
+.location-image-bg.canada {
+  transform: rotate(90deg);
+}
+.location-image-bg.uk {
+  transform: rotate(-90deg);
+}
+.location-name {
+  text-transform: uppercase;
 }
 
 footer {
@@ -461,11 +500,13 @@ nav .nav-links .nav-link {
     display: none;
   }
 
-  .banner {
+  .banner,
+  .banner-secondary {
     margin: 0 var(--body-padding-horizontal);
     border-radius: var(--rounded-corner-radius);
-
     background-image: url(../assets/shared/tablet/bg-pattern-design-pages-intro-tablet.svg);
+  }
+  .banner {
     padding: 2em 6em 3em 6em;
   }
 
@@ -490,7 +531,6 @@ nav .nav-links .nav-link {
   .footer-divider-2 {
     display: block;
   }
-  /* .logo-link */
 }
 
 @media screen and (min-width: 1024px) {

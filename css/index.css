@@ -6,6 +6,16 @@
   background-position: center left;
 }
 
+.banner .btn {
+  margin-top: 2em;
+}
+
+.banner .phone {
+  height: 570px;
+  object-fit: none;
+  object-position: 50% 25%;
+}
+
 .design-types {
   display: grid;
 }
