@@ -524,6 +524,10 @@ nav .nav-links .nav-link {
     column-gap: 2em;
   }
 
+  .contact-info-group {
+    align-items: flex-end;
+  }
+
   .footer-divider-1 {
     display: none;
   }

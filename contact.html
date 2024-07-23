@@ -1,48 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Designo Agency Website Challenge</title>
-</head>
-<body>
-  Our Company
-  Locations
-  Contact
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/contact.css" />
 
-  Contact us
-  Ready to take it to the next level? Let’s talk about your project or idea and find out how 
-  we can help your business grow. If you are looking for unique digital experiences that’s 
-  relatable to your users, drop us a line.
+    <title>Frontend Mentor | Designo Agency Website Challenge</title>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="logo-link"
+        ><img class="logo" src="assets/shared/desktop/logo-dark.png"
+      /></a>
 
-  Name
-  Email address
-  Phone
-  Your message
-  Submit
+      <div class="nav-links">
+        <a href="about.html" class="nav-link">our company</a>
+        <a href="locations.html" class="nav-link">locations</a>
+        <a href="contact.html" class="nav-link">contact</a>
+      </div>
+      <img
+        id="nav-toggle"
+        src="assets/shared/mobile/icon-hamburger.svg"
+        onclick="toggleNavBar()"
+      />
+    </nav>
+    <div id="nav-list-mobile" :class="{ 'nav-list-visible': isNavListEnabled }">
+      <a href="about.html" class="nav-link-mobile">our company</a>
+      <a href="locations.html" class="nav-link-mobile">locations</a>
+      <a href="contact.html" class="nav-link-mobile">contact</a>
+    </div>
 
-  Canada
-  See location
+    <main>
+      <div class="banner">
+        <div class="contact-label">
+          <h1 class="heading">Contact Us</h1>
+          <div class="paragraph">
+            Ready to take it to the next level? Let’s talk about your project or
+            idea and find out how we can help your business grow. If you are
+            looking for unique digital experiences that’s relatable to your
+            users, drop us a line.
+          </div>
+        </div>
+        <form class="contact-form" action="" method="POST">
+          <input
+            class="input"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            required
+          />
+          <input
+            class="input"
+            type="email"
+            id="emailAddress"
+            name="emailAddress"
+            placeholder="Email Address"
+            required
+          />
+          <input
+            class="input"
+            type="text"
+            inputmode="numeric"
+            pattern="\d*"
+            id="phone"
+            name="phone"
+            placeholder="Phone"
+          />
+          <textarea
+            class="input"
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+          >
+          </textarea>
+          <button type="submit" class="btn btn-light clickable">Submit</button>
+        </form>
+      </div>
 
-  Australia
-  See location
+      <div class="locations">
+        <div class="location">
+          <div class="location-image-group">
+            <img
+              class="location-image-bg canada"
+              src="assets/shared/desktop/bg-pattern-small-circle.svg"
+            />
+            <img
+              class="location-icon australia"
+              src="assets/shared/desktop/illustration-canada.svg"
+            />
+          </div>
 
-  United Kingdom
-  See location
+          <h3 class="location-name">canada</h3>
+          <button class="btn">see location</button>
+        </div>
 
-  Our company
-  Locations
-  Contact
+        <div class="location">
+          <div class="location-image-group">
+            <img
+              class="location-image-bg australia"
+              src="assets/shared/desktop/bg-pattern-small-circle.svg"
+            />
+            <img
+              class="location-icon australia"
+              src="assets/shared/desktop/illustration-australia.svg"
+            />
+          </div>
 
-  Designo Central Office
-  3886 Wellington Street
-  Toronto, Ontario M9C 3J5
+          <h3 class="location-name">australia</h3>
+          <button class="btn">see location</button>
+        </div>
 
-  Contact Us (Central Office)
-  P : +1 253-863-8967
-  M : contact@designo.co
-</body>
+        <div class="location">
+          <div class="location-image-group">
+            <img
+              class="location-image-bg uk"
+              src="assets/shared/desktop/bg-pattern-small-circle.svg"
+            />
+            <img
+              class="location-icon australia"
+              src="assets/shared/desktop/illustration-united-kingdom.svg"
+            />
+          </div>
+
+          <h3 class="location-name">united kingdom</h3>
+          <button class="btn">see location</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-nav">
+          <a href="index.html" class="logo-link"
+            ><img class="logo" src="assets/shared/desktop/logo-light.png"
+          /></a>
+          <hr class="footer-divider footer-divider-1" />
+          <div class="nav-links">
+            <a href="about.html" class="nav-link dark">our company</a>
+            <a href="locations.html" class="nav-link dark">locations</a>
+            <a href="contact.html" class="nav-link dark">contact</a>
+          </div>
+        </div>
+
+        <hr class="footer-divider footer-divider-2" />
+
+        <div class="contact-info-group">
+          <div class="address">
+            <div><strong>Designo Central Office</strong></div>
+            <div>3886 Wellington Street</div>
+            <div>Toronto, Ontario M9C 3J5</div>
+          </div>
+
+          <div class="contact-us">
+            <div><strong>Contact Us (Central Office)</strong></div>
+            <div>P : +1 253-863-8967</div>
+            <div>M : contact@designo.co</div>
+          </div>
+
+          <div class="social-media">
+            <a href="#">
+              <img src="assets/shared/desktop/icon-facebook.svg" />
+            </a>
+            <a href="#">
+              <img src="assets/shared/desktop/icon-youtube.svg" />
+            </a>
+            <a href="#">
+              <img src="assets/shared/desktop/icon-twitter.svg" />
+            </a>
+            <a href="#">
+              <img src="assets/shared/desktop/icon-pinterest.svg" />
+            </a>
+            <a href="#">
+              <img src="assets/shared/desktop/icon-instagram.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
+<script src="js/nav.js"></script>
