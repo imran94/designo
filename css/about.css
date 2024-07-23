@@ -138,4 +138,20 @@
   .p-2 {
     align-self: self-start;
   }
+
+  .banner .heading.animate,
+  .banner .paragraph.animate,
+  .talent-image.animate,
+  .banner-secondary-real-deal .heading.animate,
+  .banner-secondary-real-deal .paragraph.animate {
+    animation-name: fadeIn, slideRight;
+    animation-duration: var(--anim-duration-secondary);
+  }
+  .about-image.animate,
+  .real-deal-image.animate,
+  .banner-secondary-talent .heading.animate,
+  .banner-secondary-talent .paragraph.animate {
+    animation-name: fadeIn, slideLeft;
+    animation-duration: var(--anim-duration-secondary);
+  }
 }

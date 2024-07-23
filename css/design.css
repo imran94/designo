@@ -42,6 +42,15 @@
   padding-right: 2em;
 }
 
+.project.animate {
+  animation-name: fadeIn;
+  animation-duration: var(--anim-duration);
+}
+.project > *.animate {
+  animation-name: fadeIn, slideUp;
+  animation-duration: var(--anim-duration-secondary);
+}
+
 @media screen and (min-width: 500px) and (max-width: 1024px) {
   .project {
     grid-template: 1fr 1fr / 50% 50%;
@@ -59,6 +68,15 @@
 
   .project-desc {
     align-self: self-start;
+  }
+
+  .project-preview.animate {
+    animation-name: fadeIn, slideRight;
+  }
+
+  .project-name.animate,
+  .project-desc.animate {
+    animation-name: fadeIn, slideLeft;
   }
 }
 
@@ -91,5 +109,11 @@
 
   .design-type {
     height: 308px;
+  }
+
+  .banner .heading.animate,
+  .banner .paragraph.animate {
+    animation-name: fadeIn, slideUp !important;
+    animation-duration: var(--anim-duration-secondary) !important;
   }
 }

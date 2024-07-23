@@ -8,6 +8,10 @@
 .map {
   width: 100%;
 }
+.map.animate {
+  animation-name: fadeIn, slideUp;
+  animation-duration: var(--anim-duration-secondary);
+}
 .map-desktop {
   display: block;
 }
@@ -62,6 +66,15 @@
     margin: 0 var(--body-padding-horizontal);
     gap: 2em;
   }
+  .map.animate {
+    animation-name: fadeIn, slideRight;
+    animation-duration: var(--anim-duration-secondary);
+  }
+
+  .map-aus.animate {
+    animation-name: fadeIn, slideLeft;
+    animation-duration: var(--anim-duration-secondary);
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -83,5 +96,18 @@
   .banner-secondary {
     width: 100%;
     background-repeat: no-repeat;
+  }
+  .banner-heading.animate,
+  .location-address.animate,
+  .location-contact.animate {
+    animation-name: fadeIn, slideLeft;
+    animation-duration: var(--anim-duration-secondary);
+  }
+
+  .map-with-address-aus .banner-heading.animate,
+  .map-with-address-aus .location-address.animate,
+  .map-with-address-aus .location-contact.animate {
+    animation-name: fadeIn, slideRight;
+    animation-duration: var(--anim-duration-secondary);
   }
 }

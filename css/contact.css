@@ -90,4 +90,14 @@ input:focus {
   .contact-form {
     margin: 0;
   }
+
+  .contact-label.animate {
+    animation-name: fadeIn, slideRight;
+    animation-duration: var(--anim-duration-secondary);
+  }
+
+  .contact-form.animate {
+    animation-name: fadeIn, slideLeft;
+    animation-duration: var(--anim-duration-secondary);
+  }
 }

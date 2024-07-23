@@ -37,6 +37,13 @@
   row-gap: 2em;
 }
 
+.skill-image.animate,
+.skill-name.animate,
+.skill-desc.animate {
+  animation-name: fadeIn, slideUp;
+  animation-duration: var(--anim-duration);
+}
+
 .skill-image {
   background: url("../assets/shared/desktop/bg-pattern-small-circle.svg");
 }
@@ -80,6 +87,16 @@
   .skill-desc {
     grid-area: desc;
     align-self: self-start;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .skill-image {
+    animation-name: fadeIn, slideRight;
+  }
+  .skill-name,
+  .skill-desc {
+    animation-name: fadeIn, slideLeft;
   }
 }
 
@@ -145,5 +162,17 @@
   .skill-name,
   .skill-desc {
     width: 100%;
+  }
+
+  .banner .heading.animate,
+  .banner .paragraph.animate,
+  .banner .btn.animate {
+    animation-name: fadeIn, slideRight;
+    animation-duration: var(--anim-duration-secondary);
+  }
+
+  .banner .phone.animate {
+    animation-name: fadeIn, slideLeft;
+    animation-duration: var(--anim-duration-secondary);
   }
 }

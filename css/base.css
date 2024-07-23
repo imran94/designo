@@ -36,7 +36,83 @@
 
   --nav-padding-vertical: 0;
   --body-padding-horizontal: 1em;
+
+  /* Animation units */
+  --slide-distance-width: 2.5vw;
+  --slide-distance-height: 2.5vh;
+  --anim-duration: 1s;
+  --anim-duration-secondary: 1.5s;
 }
+
+/* Animations */
+@keyframes slideLeft {
+  from {
+    translate: var(--slide-distance-width) 0;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    translate: calc(var(--slide-distance-width) * -1) 0;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(var(--slide-distance-height));
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(calc(var(--slide-distance-height) * -1));
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.banner.animate,
+.banner-secondary.animate {
+  animation-name: fadeIn;
+  animation-duration: var(--anim-duration);
+}
+@media screen and (max-width: 1024px) {
+  .banner > *.animate,
+  .banner-secondary > *.animate {
+    animation-name: fadeIn, slideUp;
+    animation-duration: var(--anim-duration-secondary);
+  }
+}
+
+/* @media screen and (max-width: 500px) { */
+.project-contact-section > *.animate {
+  animation-name: fadeIn, slideUp;
+  animation-duration: var(--anim-duration-secondary);
+}
+/* } */
 
 @media screen and (min-width: 500px) {
   :root {
@@ -127,7 +203,9 @@ button,
 }
 
 button:hover,
-button:active {
+.btn:hover,
+button:active,
+.btn:active {
   background-color: var(--light-peach);
 }
 
@@ -201,12 +279,35 @@ nav {
   line-height: 14px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  /* transition: text-decoration 1s; */
+  position: relative;
+  transition: text-decoration 1s ease-out;
 }
-.nav-link:hover,
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.nav-link::after {
+  background-color: var(--black);
+}
+.nav-link.dark::after {
+  background: var(--white);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/* .nav-link:hover,
 .nav-link:active {
   text-decoration: underline;
-}
+} */
 .dark {
   color: var(--white);
 }
@@ -239,6 +340,9 @@ main {
   justify-items: center;
 
   text-align: center;
+
+  animation-name: fadeIn;
+  animation-duration: var(--anim-duration);
 }
 
 .banner {
@@ -278,6 +382,10 @@ main {
 
   background-repeat: no-repeat;
   background-size: cover;
+}
+.design-type.animate {
+  animation-name: fadeIn, slideUp;
+  animation-duration: var(--anim-duration);
 }
 
 .design-type-overlay {
@@ -371,6 +479,10 @@ main {
 .location-name {
   text-transform: uppercase;
 }
+.location > *.animate {
+  animation-name: fadeIn, slideUp;
+  animation-duration: var(--anim-duration-secondary);
+}
 
 footer {
   row-gap: 2em;
@@ -405,6 +517,11 @@ footer {
 .project-contact-section .btn {
   margin-top: 1em;
 }
+
+/* .project-contact-section.animate {
+  animation-name: fadeIn, slideUp;
+  animation-duration: var(--anim-duration);
+} */
 
 .footer-content,
 .footer-nav,
@@ -562,6 +679,16 @@ nav .nav-links .nav-link {
   .project-contact-section .btn {
     justify-self: self-end;
     grid-row: 1 / -1;
-    /* grid-column: 2; */
+
+    margin: 0;
+  }
+
+  .project-contact-section .heading.animate,
+  .project-contact-section .paragraph.animate {
+    animation-name: fadeIn, slideRight;
+  }
+
+  .project-contact-section .btn.animate {
+    animation-name: fadeIn, slideLeft;
   }
 }
